@@ -1,220 +1,333 @@
-# Community Kitchen Collective
+# Community Kitchen Collective - Kitchen Scheduling Platform
 
-## Overview
+A decentralized smart contract platform for managing shared commercial kitchen spaces using Stacks blockchain technology. This platform enables community-based kitchen sharing, booking management, and payment processing for food entrepreneurs, small businesses, and community organizations.
 
-The Community Kitchen Collective is a blockchain-powered platform that enables shared access to commercial kitchen spaces for food entrepreneurs, community events, and local culinary initiatives. Built on the Stacks blockchain using Clarity smart contracts, this system provides transparent scheduling, health compliance tracking, and equipment management for collaborative food production spaces.
+## Project Overview
 
-## Mission
+The Community Kitchen Collective addresses the challenge of accessing affordable commercial kitchen space for food entrepreneurs and small businesses. By leveraging blockchain technology, the platform provides:
 
-To democratize access to professional kitchen facilities by creating affordable, shared commercial kitchen spaces that support local food entrepreneurs while maintaining the highest standards of food safety and operational efficiency.
+- **Decentralized Kitchen Management**: Community-owned and operated kitchen spaces
+- **Transparent Booking System**: Fair and transparent scheduling with conflict resolution
+- **Automated Payment Processing**: Secure payments using STX tokens
+- **Access Control**: Digital access codes for secure kitchen entry
+- **Community Governance**: Democratic decision-making for kitchen rules and policies
 
-## System Architecture
+## Features
 
-### Core Components
+### ✅ Core Functionality (Implemented)
 
-1. **Kitchen Scheduling Contract** (`kitchen-scheduling.clar`)
-   - Schedule and manage access to shared kitchen facilities
-   - Coordinate multiple users and prevent scheduling conflicts
-   - Track usage patterns and optimize space utilization
-   - Manage booking fees and payment processing
+- **User Registration & Management**
+  - Support for individual, business, and community memberships
+  - User profiles with contact information and business details
+  - Food handler certification tracking
+  - Compliance scoring system
 
-2. **Health Compliance Contract** (`health-compliance.clar`)
-   - Ensure food safety and health code compliance for all users
-   - Track certifications and training requirements
-   - Monitor equipment sanitization and maintenance
-   - Generate compliance reports for health inspectors
+- **Kitchen Space Management**
+  - Multiple kitchen space registration
+  - Equipment inventory tracking
+  - Capacity management
+  - Maintenance mode controls
 
-3. **Equipment Maintenance Contract** (`equipment-maintenance.clar`)
-   - Track equipment usage and coordinate maintenance schedules
-   - Monitor equipment condition and performance
-   - Schedule preventive maintenance and repairs
-   - Manage equipment replacement and upgrades
+- **Booking System**
+  - Time slot reservation with conflict detection
+  - Flexible booking duration (up to 12 hours)
+  - Purpose and special requirements tracking
+  - Cancellation window management (24 hours default)
 
-## Key Features
+- **Payment Processing Framework**
+  - STX-based payment system
+  - Outstanding balance tracking
+  - Refund processing capabilities
+  - Payment record management
 
-### For Food Entrepreneurs
-- **Affordable Access**: Cost-effective access to commercial-grade kitchen facilities
-- **Flexible Scheduling**: Book kitchen time slots that fit your production needs
-- **Compliance Support**: Automated tracking of health and safety requirements
-- **Equipment Access**: Access to professional cooking and food preparation equipment
-- **Community Network**: Connect with other food entrepreneurs and collaborate
+- **Access Control**
+  - Unique access code generation
+  - Check-in/check-out functionality
+  - Session time tracking
+  - Usage statistics
 
-### For Community Organizations
-- **Event Catering**: Large-scale food preparation for community events
-- **Educational Programs**: Cooking classes and culinary training sessions
-- **Food Security**: Community meal programs and food assistance initiatives
-- **Cultural Celebrations**: Traditional cooking and cultural food events
-- **Fundraising Events**: Catered fundraising and community gatherings
+- **Query & Analytics**
+  - User information retrieval
+  - Kitchen space details
+  - Booking history and status
+  - Utilization statistics
+  - Payment records
 
-### For Kitchen Managers
-- **Automated Scheduling**: Streamlined booking system with conflict prevention
-- **Compliance Monitoring**: Real-time tracking of health code compliance
-- **Usage Analytics**: Detailed insights into kitchen utilization and revenue
-- **Maintenance Tracking**: Proactive equipment maintenance and replacement
-- **Revenue Optimization**: Dynamic pricing and capacity optimization
+### 🔄 Future Enhancements
 
-## Smart Contract Functions
+- **Advanced Payment Integration**
+  - Complete STX payment processing
+  - Multi-token support
+  - Membership subscription models
+  - Revenue sharing mechanisms
 
-### Kitchen Scheduling
-- `register-user`: Join the kitchen collective as an approved user
-- `book-kitchen-slot`: Reserve kitchen time slots for food production
-- `cancel-booking`: Cancel existing reservations with appropriate notice
-- `check-availability`: View available kitchen time slots
-- `process-payment`: Handle booking fees and security deposits
-- `generate-access-code`: Create secure access codes for booked sessions
+- **Governance Features**
+  - Community voting on kitchen rules
+  - Democratic space management
+  - Dispute resolution system
 
-### Health Compliance
-- `verify-food-handler-certification`: Validate food safety certifications
-- `log-sanitation-activity`: Record cleaning and sanitization procedures
-- `conduct-health-inspection`: Document health code compliance checks
-- `report-safety-incident`: Log food safety incidents and corrective actions
-- `update-compliance-status`: Maintain current compliance status for all users
-- `schedule-training`: Coordinate required food safety training sessions
+- **Advanced Scheduling**
+  - Recurring bookings
+  - Priority booking for members
+  - Waitlist management
+  - Calendar integration
 
-### Equipment Maintenance
-- `register-equipment`: Add new equipment to the kitchen inventory
-- `log-equipment-usage`: Track usage hours and operational data
-- `schedule-maintenance`: Plan preventive maintenance and repairs
-- `report-equipment-issue`: Document equipment problems and malfunctions
-- `update-equipment-status`: Maintain current condition status for all equipment
-- `approve-equipment-purchase`: Process requests for new equipment additions
+- **Integration & APIs**
+  - Web application interface
+  - Mobile app support
+  - IoT device integration
+  - Third-party calendar sync
 
-## Kitchen Facility Features
+## Technical Architecture
 
-### Commercial-Grade Equipment
-- **Cooking Equipment**: Professional ranges, ovens, grills, and fryers
-- **Refrigeration**: Walk-in coolers, freezers, and prep refrigerators
-- **Food Prep**: Commercial mixers, slicers, food processors, and prep tables
-- **Dishwashing**: Commercial dishwashers and three-compartment sinks
-- **Storage**: Dry storage, ingredient bins, and organized storage systems
+### Smart Contract Structure
 
-### Safety and Compliance
-- **Fire Suppression**: Commercial fire suppression systems and safety equipment
-- **Ventilation**: Professional hood systems and air circulation
-- **Flooring**: Non-slip, easy-to-clean commercial kitchen flooring
-- **Lighting**: Adequate lighting for food preparation and inspection
-- **Water Systems**: Hot water systems and grease trap management
+```
+kitchen-scheduling.clar
+├── Constants & Error Codes
+├── Data Variables (IDs, rates, limits)
+├── Data Maps
+│   ├── kitchen-users (user management)
+│   ├── kitchen-spaces (facility management)
+│   ├── bookings (reservation system)
+│   ├── kitchen-availability (scheduling)
+│   └── payment-records (financial tracking)
+├── Public Functions
+│   ├── register-kitchen-user
+│   ├── register-kitchen-space
+│   ├── book-kitchen-slot
+│   ├── process-booking-payment
+│   ├── check-in-to-kitchen
+│   ├── check-out-from-kitchen
+│   └── cancel-booking
+├── Private Helper Functions
+└── Read-only Functions
+```
 
-### Technology Integration
-- **Access Control**: Keyless entry systems with time-based access codes
-- **Monitoring**: Security cameras and activity monitoring systems
-- **Temperature Control**: Automated temperature monitoring and alerts
-- **Inventory Tracking**: Digital inventory management and ordering systems
-- **Communication**: In-kitchen communication systems and emergency contacts
+### Data Models
 
-## Membership Tiers
+**User Model:**
+- Principal address mapping
+- Personal/business information
+- Membership type and status
+- Certification and compliance tracking
+- Usage statistics and balances
 
-### Individual Entrepreneur
-- **Hourly Access**: Pay-per-use hourly kitchen access
-- **Basic Training**: Required food safety and equipment training
-- **Storage Space**: Limited refrigerated and dry storage allocation
-- **Equipment Access**: Full access to all kitchen equipment
-- **Community Support**: Access to entrepreneur networking events
+**Kitchen Space Model:**
+- Facility details and capacity
+- Equipment inventory
+- Operational status and maintenance
+- Usage statistics
 
-### Small Business Package
-- **Block Scheduling**: Reserved time blocks for regular production
-- **Priority Booking**: Advanced booking privileges and priority access
-- **Extended Storage**: Larger storage allocations for ingredients and finished products
-- **Marketing Support**: Promotional opportunities and business development resources
-- **Wholesale Connections**: Access to wholesale ingredient purchasing programs
+**Booking Model:**
+- Time slot reservations
+- User and kitchen associations
+- Payment and access information
+- Session tracking
 
-### Community Organization
-- **Non-Profit Rates**: Discounted rates for qualifying community organizations
-- **Large Event Support**: Coordination for large-scale event catering
-- **Volunteer Training**: Training programs for community volunteers
-- **Equipment Lending**: Access to portable equipment for off-site events
-- **Grant Application Support**: Assistance with food program grant applications
-
-## Technology Stack
-
-- **Blockchain**: Stacks Blockchain
-- **Smart Contracts**: Clarity Language
-- **Development Framework**: Clarinet
-- **Testing**: TypeScript/Node.js
+**Payment Model:**
+- Transaction records
+- Refund processing
+- Balance management
 
 ## Getting Started
 
 ### Prerequisites
-- [Clarinet CLI](https://docs.hiro.so/clarinet)
-- [Node.js](https://nodejs.org/)
-- [Stacks Wallet](https://wallet.hiro.so/)
+
+- [Node.js](https://nodejs.org/) (v18 or later)
+- [Clarinet](https://docs.hiro.so/stacks/clarinet) CLI tool
+- [Git](https://git-scm.com/)
 
 ### Installation
-```bash
-git clone https://github.com/fishandchips628/community-kitchen-collective
-cd community-kitchen-collective
-npm install
+
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd community-kitchen-collective
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Verify setup:**
+   ```bash
+   clarinet check
+   ```
+
+### Development Workflow
+
+1. **Run contract validation:**
+   ```bash
+   clarinet check
+   ```
+
+2. **Execute tests:**
+   ```bash
+   npm test
+   ```
+
+3. **Start development console:**
+   ```bash
+   clarinet console
+   ```
+
+4. **Deploy to testnet:**
+   ```bash
+   clarinet deploy --testnet
+   ```
+
+## Usage Examples
+
+### Register as a Kitchen User
+
+```clarity
+(contract-call? .kitchen-scheduling register-kitchen-user
+  "Alice's Bakery"
+  (some "Alice's Artisan Breads")
+  "alice@artisanbreads.com"
+  "business")
 ```
 
-### Local Development
-```bash
-clarinet check
-clarinet test
-clarinet console
+### Register a Kitchen Space (Owner Only)
+
+```clarity
+(contract-call? .kitchen-scheduling register-kitchen-space
+  "Commercial Baking Kitchen"
+  "Fully equipped for baking operations with ovens, mixers, and prep space"
+  u6
+  (list "Gas Range" "Convection Oven" "Stand Mixer" "Prep Tables"))
 ```
 
-## Health and Safety Standards
+### Book a Kitchen Time Slot
 
-The Community Kitchen Collective maintains the highest standards of food safety:
+```clarity
+(contract-call? .kitchen-scheduling book-kitchen-slot
+  u1                              ;; kitchen-id
+  u1640995200                     ;; start-time (Unix timestamp)
+  u1640998800                     ;; end-time (Unix timestamp)
+  "Morning bread production"
+  (some "Need access to freezer space"))
+```
 
-### Certification Requirements
-- **Food Handler's License**: Required for all kitchen users
-- **Manager Certification**: Required for extended-hour access
-- **Allergen Training**: Specialized training for allergen awareness
-- **HACCP Knowledge**: Understanding of food safety principles
-- **Emergency Procedures**: Training on kitchen emergency protocols
+### Query User Information
 
-### Cleaning and Sanitization
-- **Daily Cleaning Protocols**: Comprehensive cleaning after each use
-- **Deep Cleaning Schedule**: Weekly deep cleaning and sanitization
-- **Equipment Sanitization**: Proper sanitization of all equipment between users
-- **Chemical Storage**: Safe storage and handling of cleaning chemicals
-- **Waste Management**: Proper disposal and recycling procedures
+```clarity
+(contract-call? .kitchen-scheduling get-user-info tx-sender)
+```
 
-## Community Impact
+## Testing
 
-### Economic Development
-- **Job Creation**: Supporting local food entrepreneurs and employment
-- **Revenue Generation**: Keeping food dollars within the local community
-- **Skills Development**: Training programs for culinary and business skills
-- **Innovation Hub**: Fostering food innovation and product development
-- **Supply Chain**: Supporting local farmers and ingredient suppliers
+The project includes comprehensive test coverage with 19 test cases covering:
 
-### Social Benefits
-- **Food Access**: Community meal programs and food assistance
-- **Cultural Preservation**: Supporting traditional and cultural foods
-- **Education**: Cooking classes and nutritional education programs
-- **Community Building**: Bringing people together through food and cooking
-- **Health Promotion**: Encouraging healthy eating and food preparation
+- User registration and validation
+- Kitchen space management
+- Booking system functionality
+- Access control and permissions
+- Data integrity and edge cases
+- Error handling and validation
+
+**Run the test suite:**
+```bash
+npm test
+```
+
+**Test Categories:**
+- ✅ User registration and management (6 tests)
+- ✅ Kitchen space operations (4 tests)
+- ✅ Data queries and validation (5 tests)
+- ✅ Access control and permissions (2 tests)
+- ✅ Edge cases and error handling (2 tests)
+
+## Configuration
+
+### Contract Parameters
+
+- **Hourly Rate:** 0.05 STX (50,000,000 μSTX)
+- **Maximum Booking Duration:** 12 hours
+- **Cancellation Window:** 24 hours (86,400 seconds)
+- **Default Kitchen Capacity:** 4 users
+
+### Supported Membership Types
+
+- `"individual"` - Individual users and entrepreneurs
+- `"business"` - Registered businesses and companies
+- `"community"` - Community organizations and non-profits
+
+## Error Codes
+
+| Code | Constant | Description |
+|------|----------|-------------|
+| 100 | `err-owner-only` | Function requires contract owner privileges |
+| 101 | `err-not-found` | Requested resource does not exist |
+| 102 | `err-already-exists` | Resource already exists (e.g., duplicate registration) |
+| 103 | `err-invalid-time` | Invalid time parameters or validation failure |
+| 104 | `err-time-conflict` | Booking time conflicts with existing reservations |
+| 105 | `err-unauthorized` | User lacks required permissions or certification |
+| 106 | `err-booking-expired` | Booking time window has expired |
+| 107 | `err-insufficient-payment` | Payment amount is insufficient |
+| 108 | `err-cancellation-too-late` | Cancellation requested outside allowed window |
 
 ## Contributing
 
-We welcome community contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details on:
-- Code standards and review process
-- Kitchen facility improvement suggestions
-- Health and safety protocol enhancements
-- Community program development ideas
+1. **Fork the repository**
+2. **Create a feature branch:** `git checkout -b feature/amazing-feature`
+3. **Make your changes and add tests**
+4. **Ensure all tests pass:** `npm test && clarinet check`
+5. **Commit your changes:** `git commit -m 'Add amazing feature'`
+6. **Push to the branch:** `git push origin feature/amazing-feature`
+7. **Open a Pull Request**
+
+### Development Guidelines
+
+- Write comprehensive tests for new functionality
+- Follow Clarity best practices and conventions
+- Update documentation for API changes
+- Ensure backward compatibility when possible
+- Use descriptive commit messages
+
+## Security Considerations
+
+- **Input Validation:** All user inputs are validated for type and constraints
+- **Access Control:** Function-level permissions enforce business rules
+- **Data Integrity:** Consistent state management across operations
+- **Time Safety:** Timestamp validation prevents past bookings
+- **Payment Security:** Proper balance tracking and payment validation
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Support
-
-For support, questions, or to join our kitchen collective:
-- GitHub Issues: [Report bugs or request features]
-- Kitchen Manager: [Contact local kitchen management]
-- Community Forum: [Link to user discussions]
-- Training Resources: [Food safety and equipment training materials]
-
 ## Roadmap
 
-- **Phase 1**: Core scheduling and compliance tracking contracts
-- **Phase 2**: Equipment maintenance and inventory management
-- **Phase 3**: Mobile app for booking and facility management
-- **Phase 4**: Integration with local food systems and suppliers
-- **Phase 5**: Multi-location network and resource sharing
+### Phase 1: Core Platform (Current)
+- ✅ Basic user and kitchen management
+- ✅ Booking system with conflict detection
+- ✅ Payment framework
+- ✅ Access control system
+
+### Phase 2: Enhanced Features
+- 🔄 Complete payment integration
+- 🔄 Advanced scheduling features
+- 🔄 Community governance tools
+- 🔄 Mobile app interface
+
+### Phase 3: Platform Growth
+- 🔄 Multi-kitchen network support
+- 🔄 Integration partnerships
+- 🔄 Advanced analytics and reporting
+- 🔄 Franchise and licensing model
+
+## Contact & Support
+
+For questions, support, or contributions:
+
+- **Documentation:** [Project Wiki](#)
+- **Issues:** [GitHub Issues](#)
+- **Community:** [Discord Server](#)
+- **Email:** [support@kitchencollective.com](#)
 
 ---
 
-Nourishing communities through shared culinary spaces. 🍳👨‍🍳
+**Built with ❤️ for the food entrepreneur community using Stacks blockchain technology.**
